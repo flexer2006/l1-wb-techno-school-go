@@ -9,13 +9,13 @@ func timeoutTask() {
 	ch := make(chan any, 1)
 	go func() {
 		defer close(ch)
-		timeout := time.After(time.Duration(1 * time.Second))
+		timeout := time.After(1 * time.Second)
 		for {
 			select {
 			case <-timeout:
 				return
 			default:
-				ch <- 1
+				ch <- struct{}{}
 				time.Sleep(250 * time.Millisecond)
 			}
 		}
