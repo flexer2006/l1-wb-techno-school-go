@@ -1,4 +1,4 @@
-package main
+package five
 
 import (
 	"fmt"
@@ -23,8 +23,4 @@ func timeoutTask() {
 	for v := range ch {
 		fmt.Println(v)
 	}
-}
-
-func main() {
-	timeoutTask()
 }
